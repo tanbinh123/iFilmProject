@@ -20,6 +20,7 @@
    - **Tạo tài khoản**:
       - Khách hàng cần có tài khoản để đặt vé
       - Với project này, admin sẽ là tài khoản có sẵn 
+      - Thành công: username và email chưa tồn tại trong hệ thống, nhập password 2 lần giống nhau
    - **Đặt vé + combo bỏng nước**:
       - Thành công: tích điểm, thay đổi trạng thái ghế, thêm vé vào kho vé của khách
       - Thất bại: Số dư không đủ, trễ 30 phút so với giờ chiếu
@@ -28,5 +29,5 @@
       - Thành công: Hoàn tiền vào tài khoản khách, thay đổi trạng thái ghế
       - Thất bại: thời gian hủy vé trong khoảng 1 tiếng trước giờ chiếu
 3. **Admin**
-   - **Thêm phim mới**
+   - **Thêm phim mới**:
    - **Theo dõi doanh thu**: lựa chọn khung thời gian
