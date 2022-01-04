@@ -1,0 +1,16 @@
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: update
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+    show-sql: true
+  datasource:
+    url: jdbc:mysql://localhost:3306/ifilm
+    username: admin
+    password: abc@123
+    driver-class-name: com.mysql.jdbc.Driver
+  liquibase:
+    change-log: changelog.xml
+    clear-checksums: true
+  main:
+    allow-bean-definition-overriding: true

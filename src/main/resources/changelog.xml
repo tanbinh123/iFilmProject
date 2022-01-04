@@ -1,0 +1,82 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext
+   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd
+   http://www.liquibase.org/xml/ns/dbchangelog
+   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+    <property name="autoIncrement" value="true"/>
+
+    <!--
+        Added the entity Role.
+    -->
+    <changeSet author="trinhpk" id="202201031129-6">
+        <createTable tableName="role">
+            <column name="id" type="bigint" autoIncrement="${autoIncrement}">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="name" type="varchar(255)">
+                <constraints nullable="true"/>
+            </column>
+            <column name="created_by" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="created_date" type="datetime">
+                <constraints nullable="true" />
+            </column>
+            <column name="last_modified_by" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="last_modified_date" type="datetime">
+                <constraints nullable="true" />
+            </column>
+        </createTable>
+    </changeSet>
+
+    <changeSet author="trinhpk" id="202201031130-6">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                SELECT COUNT(*) FROM role WHERE name='admin';
+            </sqlCheck>
+        </preConditions>
+        <insert tableName="role">
+            <column name="created_by" value="admin"/>
+            <column name="created_date" value="2021-12-08 17:14:35.000000"/>
+            <column name="last_modified_by" value="admin"/>
+            <column name="last_modified_date" value="2021-12-08 17:14:35.000000"/>
+            <column name="name" value="admin"/>
+        </insert>
+    </changeSet>
+
+    <changeSet author="trinhpk" id="202201031131-6">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                SELECT COUNT(*) FROM role WHERE name='customer';
+            </sqlCheck>
+        </preConditions>
+        <insert tableName="role">
+            <column name="created_by" value="admin"/>
+            <column name="created_date" value="2021-12-08 17:14:35.000000"/>
+            <column name="last_modified_by" value="admin"/>
+            <column name="last_modified_date" value="2021-12-08 17:14:35.000000"/>
+            <column name="name" value="customer"/>
+        </insert>
+    </changeSet>
+
+    <changeSet author="trinhpk" id="202201031132-6">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                SELECT COUNT(*) FROM role WHERE name='guest';
+            </sqlCheck>
+        </preConditions>
+        <insert tableName="role">
+            <column name="created_by" value="admin"/>
+            <column name="created_date" value="2021-12-08 17:14:35.000000"/>
+            <column name="last_modified_by" value="admin"/>
+            <column name="last_modified_date" value="2021-12-08 17:14:35.000000"/>
+            <column name="name" value="guest"/>
+        </insert>
+    </changeSet>
+
+</databaseChangeLog>

@@ -21,4 +21,9 @@ public class MetadataDTO {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     private Long total;
+
+    public MetadataDTO(String code, String message) {
+        this.code = code;
+        this.message = message;
+    }
 }
